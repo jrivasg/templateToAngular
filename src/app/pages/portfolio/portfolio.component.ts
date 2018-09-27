@@ -11,6 +11,7 @@ export class PortfolioComponent implements OnInit {
   constructor(public productosService: ProductosServiceService) { }
 
   ngOnInit() {
+    this.productosService.filterList = this.productosService.productos;
   }
 
 }

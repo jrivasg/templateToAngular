@@ -1,3 +1,4 @@
+import { ProductosServiceService } from './../../services/productos-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private productoService: ProductosServiceService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  searchProduct(search: string) {
+    this.productoService.searchProducto(search);
   }
-
 }
